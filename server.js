@@ -10,29 +10,29 @@
 *
 ********************************************************************************/
 
-
-
 const express = require('express'); // "require" the Express module
 const app = express(); // obtain the "app" object
 const HTTP_PORT = process.env.PORT || 8080; // assign a port
 
-// start the server on the port and output a confirmation to the console
-app.listen(HTTP_PORT, () => console.log(`server listening on: ${HTTP_PORT}`));
 
 const unCountryData = require("./modules/unCountries");
+
+unCountryData.Initialize()
+  .then(() => {
+
+// start the server on the port and output a confirmation to the console
+app.listen(HTTP_PORT, () => console.log(`server listening on: ${HTTP_PORT}`));
+    
+  })
+  .catch(error => console.error('Error initializing data:', error));
 
 app.get('/', (req, res) => {
   res.send("Assignment 2:  Jacobs Oluwatimilehin Uba - 148981228");
 });
 
-unCountryData.Initialize()
-  .then(() => {
-
-    app.get('/un/countries', (req, res) => {
-      res.json(unCountryData.getAllCountries());
-    });
-  })
-  .catch(error => console.error('Error initializing data:', error));
+app.get('/un/countries', (req, res) => {
+  res.json(unCountryData.getAllCountries());
+});
 
 app.get('/un/countries/code-demo', (req, res) => {
   const countryCode = 'ca'; // Replace with the desired country code
