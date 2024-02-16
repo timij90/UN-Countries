@@ -25,7 +25,13 @@ function Initialize() {
 
 function getAllCountries() {
     return new Promise((resolve, reject) => {
-        resolve(countries);
+        if(countries.length > 0){
+            resolve(countries);
+        }
+        else{
+            reject(new Error("No countries available"));
+        }
+         
     });
 }
 

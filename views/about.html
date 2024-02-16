@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>UN Member Countries</title>
+</head>
+
+<body tabindex="-1">
+  <div class="navbar bg-base-100">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl" href="/">UN Member States</a>
+    </div>
+    <div class="dropdown">
+      <label tabindex="0" class="btn btn-ghost sm:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+        </svg>
+      </label>
+      <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <li><a class="active" href="/about">About</a></li>
+        <li>
+          <details>
+            <summary>
+              Region
+            </summary>
+            <ul class="p-2 bg-base-100">
+              <li><a href="/un/countries?region=Africa">Africa</a></li>
+              <li><a href="/un/countries?region=Americas">Americas</a></li>
+              <li><a href="/un/countries?region=Asia">Asia</a></li>
+              <li><a href="/un/countries?region=Europe">Europe</a></li>
+              <li><a href="/un/countries?region=Oceania">Oceania</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+    <div class="navbar-center hidden sm:flex">
+      <ul class="menu menu-horizontal px-1">
+        <li><a class="active" href="/about">About</a></li>
+        <li>
+          <details>
+            <summary>Region</summary>
+            <ul class="p-2 bg-base-100 right-0">
+              <li><a href="/un/countries?region=Africa">Africa</a></li>
+              <li><a href="/un/countries?region=Americas">Americas</a></li>
+              <li><a href="/un/countries?region=Asia">Asia</a></li>
+              <li><a href="/un/countries?region=Europe">Europe</a></li>
+              <li><a href="/un/countries?region=Oceania">Oceania</a></li>
+            </ul>
+          </details>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <div class="container mx-auto">
+    <div class="hero bg-base-200 rounded-box p-2">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-5xl font-bold">About</h1>
+          <p class="py-6">Everything you want to know about me - the designer & developer.
+          </p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <figure>
+        <img class="w-full rounded-lg"
+          src="https://source.unsplash.com/a-long-exposure-photo-of-colorful-lights-in-the-dark-v7cz60-oC54"
+          alt="China" />
+      </figure>
+      <div>
+        <article class="prose">
+          <p class="px-2">Hey there! My name is Jacobs Timi Uba and I'm currently studying Computer Programming &amp Analysis at
+            Seneca Polytechnic.
+          </p>
+          <p class="px-2">This website was created for the WEB322 course which displays a vibrant and
+            adaptable design.
+
+            Inside, you'll find pages dedicated to different countries, a brief overview of who I am, and a custom 404
+            error page.<br>
+
+            To ensure a smooth user experience, I've made the site adaptable to various devices. The landing page
+            features links to different country regions in a dropdown menu, and the "about" section explains the project
+            and tells a bit about myself.<br>
+
+            I've also added a touch of style using Tailwind CSS and daisyui for a polished and professional look.<br>
+
+            <p class="px-2">Outside of school, I love to play tennis and listen to music.</p>
+          </p>
+        </article>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
