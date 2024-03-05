@@ -54,7 +54,7 @@ function getCountriesByRegion(region) {
         if (filteredCountries.length > 0) {
             resolve(filteredCountries);
         } else {
-            reject(new Error("unable to find requested countries"));
+            reject(new Error("unable to find countries in that region"));
         }
     });
 }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>UN Countries</title>
+</head>
+
+<body tabindex="-1">
+    <%- include('partials/navbar', {page: '/home'}) %>
+    <div class="container mx-auto">
+        <div class="hero bg-base-200 rounded-box p-2">
+            <div class="hero-content text-center">
+                <div class="max-w-md">
+                    <h1 class="text-5xl font-bold">Welcome</h1>
+                    <p class="py-6">This application provides information about the 193 member states of the United
+                        Nations. The followings are the five permanent members of the United Nations Security Council.
+                    </p>
+                    <button class="btn btn-primary"><a href="/un/countries">Get Started Now</a></button>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card bg-base-100 shadow-xl">
+                <figure>
+                    <img class="w-full" src="https://flagcdn.com/cn.svg" alt="China" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">China</h2>
+                    <p>Global festivities celebrate Chinese Lunar New Year of Dragon</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"><a href="/un/countries/cn">View</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure>
+                    <img class="w-full" src="https://flagcdn.com/fr.svg" alt="France" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">France</h2>
+                    <p>In January 2024, France chairs the UN Security Council.</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"><a href="/un/countries/fr">View</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure>
+                    <img class="w-full" src="https://flagcdn.com/ru.svg" alt="Russia" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">Russian Federation</h2>
+                    <p>V.A. Nebenzya was appointed Permanent Representative of the Russian Federation to the United Nations and the UN Security Council</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"><a href="/un/countries/ru">View</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure>
+                    <img class="w-full" src="https://flagcdn.com/gb.svg" alt="United Kingdom" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">The United Kingdom</h2>
+                    <p>UK Mission to the United Nations (New York)</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"><a href="/un/countries/gb">View</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="card bg-base-100 shadow-xl">
+                <figure>
+                    <img class="w-full" src="https://flagcdn.com/us.svg" alt="United States" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">The United States</h2>
+                    <p>U.S. Highlights of the 78th Session of the UN General Assembly High-Level Week</p>
+                    <div class="card-actions justify-end">
+                        <button class="btn btn-primary"><a href="/un/countries/us">View</a></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

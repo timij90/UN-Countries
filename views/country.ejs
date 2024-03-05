@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <title>UN Member Countries</title>
+</head>
+
+<body tabindex="-1">
+  <%- include('partials/navbar', {page: '' }) %>
+    <div class="container mx-auto">
+      <div class="hero bg-base-200 rounded-box p-2">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">
+              <%= country.name %>
+            </h1>
+            <p class="py-6">Below, you will find detailed information about the country: <%= country.name %>
+            </p>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <figure>
+            <img class="w-full rounded-lg" src="<%= country.flag %>" alt="<%= country.name %> flag" />
+          </figure>
+        </div>
+        <div>
+          <article class="prose">
+            <p class="px-2"><span class="font-bold">Country Name: </span>
+              <%= country.name %><br>
+                <span class="font-bold">Official Name: </span>
+                <%= country.official %><br>
+                  <span class="font-bold">Native Name: </span>
+                  <%= country.nativeName %><br>
+                    <span class="font-bold">Region: </span>
+                    <%= country.region.name %><br>
+                      <span class="font-bold">Alpha 2 Code: </span>
+                      <%= country.a2code %><br>
+                        <span class="font-bold">Capital: </span>
+                        <%= country.capital %><br>
+                          <span class="font-bold">Population: </span>
+                          <%= country.population.toLocaleString() %><br>
+                            <span class="font-bold">Page On Wikipedia: </span>
+                            <a href="<%= country.wikipediaURL %>" class="btn btn-xs">
+                              <%= country.wikipediaURL %>
+                            </a><br><br>
+
+                            <div id="quote-container">
+                              <p id="quote-content"></p>
+                              <p id="quote-author"></p>
+                            </div>
+
+                            <script>
+                              document.addEventListener("DOMContentLoaded", () => {
+
+                                const quoteContainer = document.getElementById('quote-container');
+                                const quoteContentElement = document.getElementById('quote-content');
+                                const quoteAuthorElement = document.getElementById('quote-author');
+
+                                fetch("https://quotable.io/random")
+                                  .then(response => response.json())
+                                  .then(data => {
+
+                                    quoteContentElement.textContent = `"${data.content}"`;
+                                    quoteAuthorElement.innerHTML = `- <em>${data.author}</em>`;
+                                  })
+                                  .catch(error => {
+                                    console.error('Error fetching quote:', error);
+                                    quoteContainer.textContent = 'Failed to fetch a quote. Please try again later.';
+                                  });
+                              });
+                            </script>
+                            <br>
+                            <a href="#" onclick="history.back(); return false;" class="btn btn-primary btn-sm">BACK</a>
+            </p>
+          </article>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
