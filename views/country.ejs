@@ -10,8 +10,8 @@
 
 <body tabindex="-1">
   <%- include('partials/navbar', {page: '' }) %>
-    <div class="container mx-auto">
-      <div class="hero bg-base-200 rounded-box p-2">
+    <div class="container mx-auto p-4">
+      <div class="hero bg-base-300 rounded-box p-2">
         <div class="hero-content text-center">
           <div class="max-w-md">
             <h1 class="text-5xl font-bold">
@@ -26,8 +26,8 @@
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <figure>
-            <img class="w-full rounded-lg" src="<%= country.flag %>" alt="<%= country.name %> flag" />
-          </figure>
+            <img class="w-full rounded-lg shadow-xl" src="<%= country.flag %>" alt="<%= country.name %> flag" />
+          </figure><br />
         </div>
         <div>
           <article class="prose">
@@ -38,7 +38,7 @@
                   <span class="font-bold">Native Name: </span>
                   <%= country.nativeName %><br>
                     <span class="font-bold">Region: </span>
-                    <%= country.region.name %><br>
+                    <%= country.Region.name %><br>
                       <span class="font-bold">Alpha 2 Code: </span>
                       <%= country.a2code %><br>
                         <span class="font-bold">Capital: </span>
@@ -48,7 +48,7 @@
                             <span class="font-bold">Page On Wikipedia: </span>
                             <a href="<%= country.wikipediaURL %>" class="btn btn-xs">
                               <%= country.wikipediaURL %>
-                            </a><br><br>
+                            </a><br>
 
                             <div id="quote-container">
                               <p id="quote-content"></p>
@@ -75,8 +75,10 @@
                                   });
                               });
                             </script>
-                            <br>
-                            <a href="#" onclick="history.back(); return false;" class="btn btn-primary btn-sm">BACK</a>
+                        
+                            <button><a href="/un/editCountry/<%= country.a2code %>"
+                                class="btn btn-warning btn-sm">EDIT COUNTRY: <%= country.name.toUpperCase() %></a></button>
+                            <a href="#" onclick="history.back(); return false;" class="btn btn-accent btn-sm">BACK</a>
             </p>
           </article>
         </div>
