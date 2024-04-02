@@ -166,7 +166,7 @@ function getAllRegions() {
 function addCountry(countryData) {
   return new Promise((resolve, reject) => {
 
-    const permanentUNSC = countryData.permanentUNSC === 'on' ? true : false;
+    countryData.permanentUNSC = countryData.permanentUNSC ? true : false;
 
     Country.create(countryData).then(() => {
       resolve();
@@ -179,6 +179,9 @@ function addCountry(countryData) {
 
 function editCountry(countryCode, countryData) {
   return new Promise((resolve, reject) => {
+
+    countryData.permanentUNSC = countryData.permanentUNSC ? true : false;
+
     Country.update({
       countryData}, 
       { where: { 
@@ -196,7 +199,7 @@ function editCountry(countryCode, countryData) {
 
 function deleteCountry(countryCode) {
   return new Promise((resolve, reject) => {
-    Country.delete({
+    Country.destroy({
       where: { 
         a2code: countryCode 
       }

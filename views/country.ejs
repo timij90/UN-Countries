@@ -76,8 +76,11 @@
                               });
                             </script>
                         
-                            <button><a href="/un/editCountry/<%= country.a2code %>"
-                                class="btn btn-warning btn-sm">EDIT COUNTRY: <%= country.name.toUpperCase() %></a></button>
+                        <% if(session.user) { %> 
+                          <button><a href="/un/editCountry/<%= country.a2code %>"
+                            class="btn btn-warning btn-sm">EDIT COUNTRY: <%= country.name.toUpperCase() %></a></button>
+                          <% } %>
+                          
                             <a href="#" onclick="history.back(); return false;" class="btn btn-accent btn-sm">BACK</a>
             </p>
           </article>
