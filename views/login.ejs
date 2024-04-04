@@ -22,30 +22,33 @@
             </div>
             <br>
 
-            <div class="flex flex-col justify-center">
-                <form method="post" action="/login">
-                    <div class="form-control">
-                        <label for="userName" class="label">
-                            <span class="label-text font-bold text-base">User Name</span>
-                        </label>
-                        <input type="text" id="userName" name="userName" required placeholder="User Name"
-                            value="<%= typeof userName !== 'undefined' ? userName : '' %>"
-                            class="input input-bordered w-full rounded-box" />
-                    </div>
+            <div class="card justify-center">
+                <div class="card-body">
+                    <form method="post" action="/login">
+                        <div class="form-control">
+                            <label for="userName" class="label">
+                                <span class="label-text font-bold text-base">User Name</span>
+                            </label>
+                            <input type="text" id="userName" name="userName" required placeholder="User Name"
+                                value="<%= typeof userName !== 'undefined' ? userName : '' %>"
+                                class="input input-bordered w-full rounded-box" />
+                        </div>
 
-                    <div class="form-control">
-                        <label for="password" class="label">
-                            <span class="label-text font-bold text-base">Password</span>
-                        </label>
-                        <input type="password" id="password" name="password" required placeholder="Password"
-                            class="input input-bordered w-full rounded-box" />
-                    </div>
+                        <div class="form-control">
+                            <label for="password" class="label">
+                                <span class="label-text font-bold text-base">Password</span>
+                            </label>
+                            <input type="password" id="password" name="password" required placeholder="Password"
+                                class="input input-bordered w-full rounded-box" />
+                        </div>
 
-                    <div class="mt-6 flex flex-col justify-center items center">
-                        <button type="submit" class="btn btn-primary rounded-lg">Login</button>
-                    </div><br />
-                </form>
+                        <div class="mt-6 flex flex-col justify-center items center">
+                            <button type="submit" class="btn btn-primary rounded-lg">Login</button>
+                        </div><br />
+                    </form>
+                </div>
             </div>
+
 
             <% if(typeof errorMessage !=='undefined' && errorMessage) { %>
                 <div class="alert alert-error">

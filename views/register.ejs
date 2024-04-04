@@ -38,44 +38,49 @@
                         Proceed to Log in
                     </a>
                     <% } else { %>
-                        <form method="post" action="/register">
-                            <div class="form-control">
-                                <label for="userName" class="label">
-                                    <span class="label-text font-bold text-base">User Name</span>
-                                </label>
-                                <input type="text" id="userName" name="userName" required placeholder="User Name"
-                                    value="<%= typeof userName !== 'undefined' ? userName : '' %>"
-                                    class="input input-bordered w-full rounded-box" />
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="post" action="/register">
+                                    <div class="form-control">
+                                        <label for="userName" class="label">
+                                            <span class="label-text font-bold text-base">User Name</span>
+                                        </label>
+                                        <input type="text" id="userName" name="userName" required placeholder="User Name"
+                                            value="<%= typeof userName !== 'undefined' ? userName : '' %>"
+                                            class="input input-bordered w-full rounded-box" />
+                                    </div>
+        
+                                    <div class="form-control">
+                                        <label for="password" class="label">
+                                            <span class="label-text font-bold text-base">Password</span>
+                                        </label>
+                                        <input type="password" id="password" name="password" required placeholder="Password"
+                                            class="input input-bordered w-full rounded-box" />
+                                    </div>
+        
+                                    <div class="form-control">
+                                        <label for="password2" class="label">
+                                            <span class="label-text font-bold text-base">Confirm Password</span>
+                                        </label>
+                                        <input type="password" id="password2" name="password2" required
+                                            placeholder="Confirm Password" class="input input-bordered w-full rounded-box" />
+                                    </div>
+        
+                                    <div class="form-control">
+                                        <label for="email" class="label">
+                                            <span class="label-text font-bold text-base">Email Address</span>
+                                        </label>
+                                        <input type="email" id="email" name="email" required placeholder="Email Address"
+                                            class="input input-bordered w-full rounded-box" />
+                                    </div>
+        
+                                    <div class="mt-6 flex flex-col justify-center items center">
+                                        <button type="submit" class="btn btn-primary rounded-lg">Register</button>
+                                    </div><br />
+                                </form>
                             </div>
-
-                            <div class="form-control">
-                                <label for="password" class="label">
-                                    <span class="label-text font-bold text-base">Password</span>
-                                </label>
-                                <input type="password" id="password" name="password" required placeholder="Password"
-                                    class="input input-bordered w-full rounded-box" />
-                            </div>
-
-                            <div class="form-control">
-                                <label for="password2" class="label">
-                                    <span class="label-text font-bold text-base">Confirm Password</span>
-                                </label>
-                                <input type="password" id="password2" name="password2" required
-                                    placeholder="Confirm Password" class="input input-bordered w-full rounded-box" />
-                            </div>
-
-                            <div class="form-control">
-                                <label for="email" class="label">
-                                    <span class="label-text font-bold text-base">Email Address</span>
-                                </label>
-                                <input type="email" id="email" name="email" required placeholder="Email Address"
-                                    class="input input-bordered w-full rounded-box" />
-                            </div>
-
-                            <div class="mt-6 flex flex-col justify-center items center">
-                                <button type="submit" class="btn btn-primary rounded-lg">Register</button>
-                            </div><br />
-                        </form>
+                        </div>
+                        
                         <% } %>
 
             </div>
